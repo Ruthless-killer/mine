@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="loginAction">test</a>
+	<a href="jsp/kaoshi1.jsp">test</a>
 
 </body>
 </html>

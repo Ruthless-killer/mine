@@ -31,15 +31,15 @@ $(function(){
 		        	return false;
 		        }
 		    },    
-		    success:function(data){  
-		    	alert("aaaaaaaaaa")
+		    /* success:function(data){  
+		    	//alert("aaaaaaaaaa")
 		       	if(data=="1"){
 		       		alert("登录成功")
 		       		location.href="page/main.jsp";
 		       	}else{
 		       		$.messager.alert('系统信息','登录失败');  
 		       	}
-		    }    
+		    }  */   
 		});
 	})
 })

@@ -24,7 +24,6 @@ public class login {
 	
 	
 	@RequestMapping("loginAction")
-	@ResponseBody
 	public String login(User user,HttpSession session){
 		System.out.println(user);
 		System.out.println("aaaaaaaaaa");
@@ -32,14 +31,14 @@ public class login {
 		if(user.getUserType().equals("xs")) {
 			StudentBean student=studentservice.login(user);
 			if(student!=null) {
-				return "1";
+				return "jsp/kaoshi1.jsp";
 			}else {
 				return "0";
 			}
 		}else {
 			TeacherBean teacher=teacherservice.login(user);
 			if(teacher!=null) {
-				return "1";
+				return "jsp/menu.jsp";
 			}else {
 				return "0";
 			}
