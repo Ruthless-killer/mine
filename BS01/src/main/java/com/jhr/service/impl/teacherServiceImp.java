@@ -9,12 +9,12 @@ import com.jhr.dao.teacherDao;
 import com.jhr.service.teacherService;
 @Service
 public class teacherServiceImp implements teacherService {
-	@Autowired
-	private teacherDao teacherdao;
+	
 	@Override
 	public TeacherBean login(User user) {
+		return null;
 		// TODO Auto-generated method stub
-		return teacherdao.login(user);
+		//return teacherdao.login(user);
 	}
 
 }

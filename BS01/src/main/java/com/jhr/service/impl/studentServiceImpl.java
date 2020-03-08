@@ -14,8 +14,15 @@ public class studentServiceImpl implements studentService {
 
 	@Override
 	public StudentBean login(User user) {
+		return null;
 		// TODO Auto-generated method stub
-		return studentdao.login(user);
+		//return studentdao.login(user);
+	}
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		System.out.println("service");
 	}
 
 }
