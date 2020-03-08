@@ -1,0 +1,27 @@
+input {
+	width: 275px;
+}
+select {
+	width: 275px;
+}
+.submit_css{
+	width: 60px;	
+}
+input[type="submit"]{
+	width: 60px;
+}
+input[type="button"]{
+	width: 60px;
+}
+#tbSelYear{
+	width: 110px;
+}
+#tbSelMonth{
+	width: 110px;
+}
+input[type="radio"]{
+	width: 10px;
+}
+body {
+	background-color: #EAF3FC;
+}
