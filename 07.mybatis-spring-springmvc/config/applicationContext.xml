@@ -32,6 +32,22 @@
 		<property name="dataSource" ref="dataSource"/>
 		<!-- 加载sql映射文件 -->
 		<property name="mapperLocations" value="classpath:mapper/*.xml"/>
+		<!-- 引入插件 -->
+		<property name="plugins">
+			<array>
+				<!-- mybatis分页插件 -->
+				<bean class="com.github.pagehelper.PageInterceptor">
+					<property name="properties">
+						<!-- 
+						helperDialect:连接数据库的类型
+						 -->
+						<value>
+							helperDialect=mysql
+						</value>
+					</property>
+				</bean>
+			</array>
+		</property>
 	</bean>
 
 	<!-- Mapper接口的扫描 -->
