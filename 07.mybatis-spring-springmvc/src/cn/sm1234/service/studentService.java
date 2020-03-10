@@ -7,4 +7,6 @@ public interface studentService  {
 
 	StudentBean login(User user);
 
+	void saveStudent(StudentBean s);
+
 }

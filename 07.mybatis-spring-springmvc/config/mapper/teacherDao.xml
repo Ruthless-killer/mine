@@ -4,6 +4,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 -->
 <mapper namespace="cn.sm1234.dao.teacherDao">
+	<select id="findByUsername" resultType="cn.sm1234.domain.TeacherBean" parameterType="cn.sm1234.domain.User">
+		select * from teacher where tno = #{user.userName} and password = #{user.password}
+	</select>
+	<select id="findByUsernameG" resultType="cn.sm1234.domain.TeacherBean" parameterType="cn.sm1234.domain.User">
+		select * from teacher where tno = #{user.userName} and password = #{user.password} and  position = "管理员"
+	</select>
 
 	
 

@@ -19,7 +19,7 @@ $(function(){
 	$("#login_submit").click(function(){
 		//alert("jdksajdkaldj");
 		$('#login_form').form('submit', {    
-		    url:'http://localhost:8080/login/loginAction',    
+		    url:'${pageContext.request.contextPath}/loginAction.action',    
 		    onSubmit: function(){    
 		        //非空验证等   
 		        if($(":text:eq(0)").val()==""){
@@ -32,10 +32,10 @@ $(function(){
 		        }
 		    },    
 		    success:function(data){  
-		    	alert("aaaaaaaaaa")
+		    	//alert("aaaaaaaaaa")
 		       	if(data=="1"){
 		       		alert("登录成功")
-		       		location.href="page/main.jsp";
+		       		location.href="succ.jsp";
 		       	}else{
 		       		$.messager.alert('系统信息','登录失败');  
 		       	}
@@ -57,7 +57,7 @@ $(function(){
 		        	 	</tr>
 		        	 	<tr style="height:40px;">
 		        	 		<td>登录名</td>
-		        	 		<td><input type="text" name="username"/> </td>
+		        	 		<td><input type="text" name="userName"/> </td>
 		        	 	</tr>
 		        	 	<tr style="height:40px;">
 		        	 		<td>
@@ -67,9 +67,9 @@ $(function(){
 		        	 	</tr>
 		        	 	<tr>
 		        	 		<td colspan="2" align="right">
-								<input type="radio" name="zt" value="xs" checked="checked" >学生
-								<input type="radio" name="zt" value="js" >教师
-								<input type="radio" name="zt" value="gly" >管理员
+								<input type="radio" name="userType" value="xs" checked="checked" >学生
+								<input type="radio" name="userType" value="js" >教师
+								<input type="radio" name="userType" value="gly" >管理员
 							</td>
 		        	 		<td colspan="2" align="right">
 		        	 			<a id="login_submit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">登录</a> 

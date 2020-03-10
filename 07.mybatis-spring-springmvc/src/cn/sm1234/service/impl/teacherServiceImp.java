@@ -15,8 +15,14 @@ public class teacherServiceImp implements teacherService {
 	private teacherDao teacherdao;
 
 	public TeacherBean login(User user) {
+		//System.out.println(user);
 		// TODO Auto-generated method stub
-		return null;
+		if(user.getUserType().equals("js")) {
+			return	teacherdao.findByUsername(user);
+		}else {
+			return	teacherdao.findByUsernameG(user);
+		}
+		//return null;
 	}
 	
 	

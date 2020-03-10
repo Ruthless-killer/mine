@@ -1,18 +1,19 @@
 package cn.sm1234.dao;
 
 
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Param;
 
 import cn.sm1234.domain.StudentBean;
 import cn.sm1234.domain.User;
 
 
-@Repository
+
 public interface studentDao {
 	
-	StudentBean login(User user);
 	
-	
-	StudentBean login();
+
+	StudentBean findByUser(@Param("user") User user);
+
+	void saveStudent(StudentBean s);
 
 }

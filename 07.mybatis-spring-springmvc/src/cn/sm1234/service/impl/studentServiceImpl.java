@@ -18,7 +18,14 @@ public class studentServiceImpl implements studentService {
 	public StudentBean login(User user) {
 		//return null;
 		// TODO Auto-generated method stub
-		return studentdao.login(user);
+		//System.out.println(user);
+		return studentdao.findByUser(user);
+	}
+
+	public void saveStudent(StudentBean s) {
+		studentdao.saveStudent(s);
+		// TODO Auto-generated method stub
+		
 	}
 
 }

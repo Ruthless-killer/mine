@@ -26,9 +26,10 @@ public class login {
 	
 	@RequestMapping("loginAction")
 	@ResponseBody
-	public String login(User user,HttpSession session){
+	public String login1(User user,HttpSession session){
 		//System.out.println(user);
-		System.out.println("aaaaaaaaaa");
+		System.out.println("loginActionController");
+		//System.out.println(user.getUserType());
 		session.setAttribute("user", user);
 		if(user.getUserType().equals("xs")) {
 			StudentBean student=studentservice.login(user);
@@ -39,6 +40,7 @@ public class login {
 			}
 		}else {
 			TeacherBean teacher=teacherservice.login(user);
+			//System.out.println(teacher);
 			if(teacher!=null) {
 				return "1";
 			}else {

@@ -16,6 +16,13 @@ public class TeacherBean {
 	private int powerid;
 	private String des;
 	
+	
+	@Override
+	public String toString() {
+		return "TeacherBean [id=" + id + ", tno=" + tno + ", name=" + name + ", birthday=" + birthday + ", nation="
+				+ nation + ", tel=" + tel + ", email=" + email + ", address=" + address + ", position=" + position
+				+ ", password=" + password + ", powerid=" + powerid + ", des=" + des + "]";
+	}
 	public int getId() {
 		return id;
 	}

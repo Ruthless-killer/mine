@@ -8,6 +8,11 @@ public class User {
 	
 	private String password;
 	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", userType=" + userType + "]";
+	}
+
 	private String userType;
 
 	public String getUserType() {
