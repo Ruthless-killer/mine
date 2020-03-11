@@ -33,10 +33,13 @@ $(function(){
 		    },    
 		    success:function(data){  
 		    	//alert("aaaaaaaaaa")
-		       	if(data=="1"){
+		       	if(data=="student"){
 		       		alert("登录成功")
-		       		location.href="succ.jsp";
-		       	}else{
+		       		location.href="student_menu.jsp";
+		       	}else if(data=="teacher"){
+		       		location.href="teacher_menu.jsp"
+		       	}
+		       	else{
 		       		$.messager.alert('系统信息','登录失败');  
 		       	}
 		    }    
@@ -48,7 +51,7 @@ $(function(){
 <body style="background-color:#E9F1FF;">
 	<div style="margin:100px auto;width:400px;">
 		<div id="p" class="easyui-panel" title="登录"     
-	        style="width:400px;height:200px;padding:10px;background:#fafafa;"   
+	        style="width:800px;height:700px;padding:10px;background:#fafafa;"   
 	        data-options="iconCls:'myicon-login'">   
 		        <form action="login" method="post" id="login_form">
 		        	 <table width="225" align="center">

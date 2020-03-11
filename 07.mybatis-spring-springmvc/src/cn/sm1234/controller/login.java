@@ -34,15 +34,24 @@ public class login {
 		if(user.getUserType().equals("xs")) {
 			StudentBean student=studentservice.login(user);
 			if(student!=null) {
-				return "1";
+				return "student";
 			}else {
 				return "0";
 			}
 		}else {
 			TeacherBean teacher=teacherservice.login(user);
 			//System.out.println(teacher);
+			
+//			if(teacher!=null&&teacher.getPosition().equals("管理员")) {
+//				return "manager";
+//			}else if(teacher!=null&& !teacher.getPosition().equals("管理员")) {
+//				return "teacher";
+//			}else {
+//				return "0";
+//			}
+			
 			if(teacher!=null) {
-				return "1";
+				return "teacher";
 			}else {
 				return "0";
 			}
