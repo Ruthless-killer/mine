@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 -->
+<mapper namespace="cn.sm1234.dao.deptDao">
+	<insert id="saveOneDept" resultType="java.lang.Integer" parameterType="cn.sm1234.domain.deptBean">
+		
+	</insert>
+	
+	<update id="updateById" parameterType="cn.sm1234.domain.deptBean">
+	</update>
+	
+	<delete id="deleteByExample" parameterType="cn.sm1234.domain.deptBean">
+    	
+  	</delete>
+
+</mapper>
