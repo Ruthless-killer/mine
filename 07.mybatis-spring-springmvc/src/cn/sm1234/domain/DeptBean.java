@@ -4,17 +4,18 @@ import java.util.Date;
 
 public class DeptBean {
 
-	private int id;
+	private String id;
 	private String name;
 	private Date setdate;
 	private String des;
 	
 	
 	
-	public int getId() {
+	
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
