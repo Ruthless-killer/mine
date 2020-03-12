@@ -27,7 +27,7 @@ public class login {
 	@RequestMapping("loginAction")
 	@ResponseBody
 	public String login1(User user,HttpSession session){
-		//System.out.println(user);
+		System.out.println(user);
 		System.out.println("loginActionController");
 		//System.out.println(user.getUserType());
 		session.setAttribute("user", user);

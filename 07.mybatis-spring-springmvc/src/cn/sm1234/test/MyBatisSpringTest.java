@@ -53,8 +53,7 @@ public class MyBatisSpringTest {
 		
 		deptService deptservice = (deptService)ac.getBean("deptService");
 		DeptBean dept = new DeptBean();
-		dept.setId("3");
-		dept.setName("机电学院1");
+		dept.setName("机电学院2");
 		Date d=DateUtils.strToDate("2019-07-03");
 		dept.setSetdate(d);
 		dept.setDes("电子工程学院");

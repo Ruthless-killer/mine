@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class DeptBean {
 
-	private String id;
+	private int id;
 	private String name;
 	private Date setdate;
 	private String des;
@@ -12,10 +12,11 @@ public class DeptBean {
 	
 	
 	
-	public String getId() {
+	
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
