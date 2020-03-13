@@ -14,7 +14,7 @@ public class CustomerController {
 	
 	//注入业务对象
 	@Resource
-	private CustomerService customerService;
+	private CustomerService CustomerService;
 
 	/*@RequestMapping("/test")
 	public String test(){
@@ -35,7 +35,7 @@ public class CustomerController {
 	@RequestMapping("/save")
 	public String save(Customer customer){
 		System.out.println("======"+customer);
-		customerService.saveCustomer(customer);
+		CustomerService.saveCustomer(customer);
 		return "succ";
 	}
 	

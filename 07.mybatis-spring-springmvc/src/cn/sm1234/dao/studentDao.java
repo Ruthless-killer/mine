@@ -14,6 +14,8 @@ public interface studentDao {
 
 	StudentBean findByUser(@Param("user") User user);
 
-	void saveStudent(StudentBean s);
+	int saveStudent(StudentBean s);
+
+	int update(StudentBean student);
 
 }

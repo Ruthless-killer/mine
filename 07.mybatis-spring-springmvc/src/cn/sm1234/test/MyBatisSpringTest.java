@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import cn.sm1234.dao.deptDao;
 import cn.sm1234.domain.Customer;
 import cn.sm1234.domain.DeptBean;
 import cn.sm1234.domain.StudentBean;
@@ -51,13 +52,8 @@ public class MyBatisSpringTest {
 		//1.加载spring配置
 		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		deptService deptservice = (deptService)ac.getBean("deptService");
-		DeptBean dept = new DeptBean();
-		dept.setName("机电学院2");
-		Date d=DateUtils.strToDate("2019-07-03");
-		dept.setSetdate(d);
-		dept.setDes("电子工程学院");
-		int a=deptservice.saveOne(dept);
+		deptDao d = (deptDao)ac.getBean("deptDao");
+		int a= d.selCount();
 		System.out.println(a);
 	}
 }
