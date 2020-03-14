@@ -1,6 +1,7 @@
 package cn.sm1234.test;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -9,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import cn.sm1234.dao.deptDao;
 import cn.sm1234.domain.Customer;
 import cn.sm1234.domain.DeptBean;
+import cn.sm1234.domain.EasyUIDatagrid;
 import cn.sm1234.domain.StudentBean;
 import cn.sm1234.service.CustomerService;
 import cn.sm1234.service.deptService;
@@ -52,8 +54,11 @@ public class MyBatisSpringTest {
 		//1.加载spring配置
 		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		deptDao d = (deptDao)ac.getBean("deptDao");
-		int a= d.selCount();
-		System.out.println(a);
+//		deptDao d = (deptDao)ac.getBean("deptDao");
+		deptService d = (deptService)ac.getBean("deptService");
+		deptDao dao = (deptDao)ac.getBean("deptDao");
+		List<DeptBean> l=(List<DeptBean>) dao.selByPage(0, 1);
+//		EasyUIDatagrid a= d.showAll(0, 1);
+		System.out.println(l.get(0));
 	}
 }
