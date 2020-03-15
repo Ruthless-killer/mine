@@ -52,10 +52,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where id=#{dept.id}
 	</update>
 
-	<delete id="deleteById"
-		parameterType="cn.sm1234.domain.DeptBean">
+	<delete id="deleteById" parameterType="java.lang.Integer">
 		
-		DELETE FROM dept WHERE id = #{dept.id} 
+		DELETE FROM dept WHERE id in
+		<foreach collection="array" item="arr" index="no" open="("
+			separator="," close=")">
+			#{arr}
+		</foreach>
 
 	</delete>
 

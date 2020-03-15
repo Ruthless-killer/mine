@@ -1,5 +1,6 @@
 package cn.sm1234.test;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -57,8 +58,11 @@ public class MyBatisSpringTest {
 //		deptDao d = (deptDao)ac.getBean("deptDao");
 		deptService d = (deptService)ac.getBean("deptService");
 		deptDao dao = (deptDao)ac.getBean("deptDao");
-		List<DeptBean> l=(List<DeptBean>) dao.selByPage(0, 1);
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		list.add(3);
+//		List<DeptBean> l=(List<DeptBean>) dao.selByPage(0, 1);
+		int a= dao.deleteById(list);
 //		EasyUIDatagrid a= d.showAll(0, 1);
-		System.out.println(l.get(0));
+		System.out.println(a);
 	}
 }
