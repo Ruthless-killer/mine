@@ -45,10 +45,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="updateById" parameterType="cn.sm1234.domain.DeptBean">
 		update dept 
 		<trim prefix="set" suffixOverrides=",">
-			<if test="dept.id=null">id=#{dept.id},</if>
-			<if test="dept.name=null">name=#{dept.name},</if>
-			<if test="dept.setdate=null">setdate=#{dept.setdate},</if>
-			<if test="dept.des=null">des=#{dept.des},</if>
+			<if test="dept.name!=null">name=#{dept.name},</if>
+			<if test="dept.setdate!=null">setdate=#{dept.setdate},</if>
+			<if test="dept.des!=null">des=#{dept.des},</if>
 		</trim>
 		where id=#{dept.id}
 	</update>
