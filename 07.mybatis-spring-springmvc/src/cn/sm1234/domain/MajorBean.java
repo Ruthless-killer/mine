@@ -2,13 +2,33 @@ package cn.sm1234.domain;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class MajorBean {
 	
 	private int id;
 	private String name;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date setDate;
 	private int deptId;
+	private String deptName;
 	private String des;
+	
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return "MajorBean [id=" + id + ", name=" + name + ", setDate=" + setDate + ", deptId=" + deptId + ", deptName="
+				+ deptName + ", des=" + des + "]";
+	}
+	public String getDeptName() {
+		return deptName;
+	}
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
 	public int getId() {
 		return id;
 	}
