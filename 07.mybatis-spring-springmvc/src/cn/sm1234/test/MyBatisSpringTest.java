@@ -51,30 +51,28 @@ public class MyBatisSpringTest {
 //		customerService.saveCustomer(customer);
 //	}
 	
-//	@Test
-//	public void test(){
-//		//1.加载spring配置
-//		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
-//		
-////		deptDao d = (deptDao)ac.getBean("deptDao");
-//		deptService d = (deptService)ac.getBean("deptService");
-//		deptDao dao = (deptDao)ac.getBean("deptDao");
-//		ArrayList<Integer> list = new ArrayList<Integer>();
-//		list.add(3);
-////		List<DeptBean> l=(List<DeptBean>) dao.selByPage(0, 1);
-////		int a= dao.deleteById(list);
-////		EasyUIDatagrid a= d.showAll(0, 1);
-//		DeptBean d1=dao.selsectOne(1);
-//		System.out.println(d1);
-//	}
-	
 	@Test
 	public void test(){
 		//1.加载spring配置
 		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
-		majorService d = (majorService)ac.getBean("majorService");
 		
-		d.showAll(2, 1);
-		System.out.println("a");
+//		deptDao d = (deptDao)ac.getBean("deptDao");
+		deptService d = (deptService)ac.getBean("deptService");
+		deptDao dao = (deptDao)ac.getBean("deptDao");
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		list.add(3);
+//		List<DeptBean> l=(List<DeptBean>) dao.selByPage(0, 1);
+		int a= dao.deleteById(list);
+//		EasyUIDatagrid a= d.showAll(0, 1);
+//		DeptBean d1=dao.selsectOne(1);
+		System.out.println(a);
 	}
+	
+//	/*
+//	 * @Test public void test(){ //1.加载spring配置 ApplicationContext ac = new
+//	 * ClassPathXmlApplicationContext("applicationContext.xml"); majorService d =
+//	 * (majorService)ac.getBean("majorService");
+//	 * 
+//	 * d.showAll(2, 1); System.out.println("a"); }
+//	 */
 }

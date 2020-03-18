@@ -5,9 +5,25 @@ public class PoliticsClassBean {
 	private int id;
 	private String name;
 	private int majorId;
+	private String majorName;
 	private int teacherId;
+	private String teacherName;
 	private String des;
 	
+	
+	
+	public String getMajorName() {
+		return majorName;
+	}
+	public void setMajorName(String majorName) {
+		this.majorName = majorName;
+	}
+	public String getTeacherName() {
+		return teacherName;
+	}
+	public void setTeacherName(String teacherName) {
+		this.teacherName = teacherName;
+	}
 	public int getId() {
 		return id;
 	}

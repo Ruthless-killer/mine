@@ -1,14 +1,14 @@
 package cn.sm1234.domain;
 import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 
 public class DeptBean {
 
 	private int id;
 	private String name;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	
 	private Date setdate;
 	private String des;
 	
