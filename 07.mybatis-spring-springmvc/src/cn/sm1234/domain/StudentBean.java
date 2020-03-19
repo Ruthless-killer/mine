@@ -7,6 +7,7 @@ public class StudentBean {
 	private int id;
 	private String sno;
 	private String name;
+	private String sex;
 	private Date birthday;
 	private String nation;
 	private String tel;
@@ -14,8 +15,32 @@ public class StudentBean {
 	private String address;
 	private String password;
 	private int classid;
+	private String classname;
 	private int powerid;
 	private String des;
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return "StudentBean [id=" + id + ", sno=" + sno + ", name=" + name + ", sex=" + sex + ", birthday=" + birthday
+				+ ", nation=" + nation + ", tel=" + tel + ", email=" + email + ", address=" + address + ", password="
+				+ password + ", classid=" + classid + ", classname=" + classname + ", powerid=" + powerid + ", des="
+				+ des + "]";
+	}
+	public String getClassname() {
+		return classname;
+	}
+	public void setClassname(String classname) {
+		this.classname = classname;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 	public int getId() {
 		return id;
 	}

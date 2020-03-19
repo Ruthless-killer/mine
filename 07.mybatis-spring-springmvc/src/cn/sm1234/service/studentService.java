@@ -17,5 +17,7 @@ public interface studentService  {
 
 	EasyUIDatagrid showAll(int pageSize,int pageNumber);
 
+	
+
 
 }

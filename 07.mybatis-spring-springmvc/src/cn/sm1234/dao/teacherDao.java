@@ -17,4 +17,7 @@ public interface teacherDao {
 	@Select("select * from teacher where tno = #{teacherid}")
 	String selById(@Param("teacherid") int teacherid);
 
+	@Select("select * from teacher where namae = #{teachername}")
+	TeacherBean selByName(@Param("teachername") String teachername);
+
 }
