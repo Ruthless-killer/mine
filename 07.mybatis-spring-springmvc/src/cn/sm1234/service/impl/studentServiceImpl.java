@@ -59,12 +59,13 @@ public class studentServiceImpl implements studentService {
 
 	public EasyUIDatagrid showAll(int pageSize, int pageNumber) {
 		// TODO Auto-generated method stub
+		System.out.println("pageSize:"+pageSize);
+		System.out.println("pageNumber:"+pageNumber);
 		EasyUIDatagrid datagrid = new EasyUIDatagrid();
 		List<StudentBean> stulist=studentdao.selByPage(pageSize*(pageNumber-1), pageSize);
-//		System.out.println(majorlist.size());
-//		for(int i=0;i<majorlist.size();i++) {
-//			System.out.println(majorlist.get(i));
-//		}
+		for (StudentBean studentBean : stulist) {
+			System.out.println(studentBean);
+		}
 		if(stulist!=null) {
 			for (StudentBean studentBean : stulist) {
 				int classid = studentBean.getClassid();
