@@ -6,6 +6,21 @@ public class QuestionBankSelectBean {
 	private int answer;
 	private String teachername;
 	private int courseid;
+	private String coursename;
+	
+	
+	
+	@Override
+	public String toString() {
+		return "QuestionBankSelectBean [id=" + id + ", question=" + question + ", answer=" + answer + ", teachername="
+				+ teachername + ", courseid=" + courseid + ", coursename=" + coursename + "]";
+	}
+	public String getCoursename() {
+		return coursename;
+	}
+	public void setCoursename(String coursename) {
+		this.coursename = coursename;
+	}
 	public int getId() {
 		return id;
 	}
