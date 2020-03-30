@@ -3,6 +3,8 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 
 
@@ -10,7 +12,7 @@ public class DeptBean {
 
 	private int id;
 	private String name;
-	//@DateTimeFormat
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date setdate;
 	private String des;
 	
