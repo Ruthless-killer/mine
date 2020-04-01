@@ -17,10 +17,10 @@ public interface teacherDao {
 
 	TeacherBean findByUsernameG(@Param("user") User user);
 
-	@Select("select * from teacher where tno = #{teacherid}")
-	String selById(@Param("teacherid") int teacherid);
+	@Select("select * from teacher where id = #{teacherid}")
+	TeacherBean selById(@Param("teacherid") int teacherid);
 
-	@Select("select * from teacher where namae = #{teachername}")
+	@Select("select * from teacher where name = #{teachername}")
 	TeacherBean selByName(@Param("teachername") String teachername);
 
 	@Select("select * from teacher limit #{arg0},#{arg1}")

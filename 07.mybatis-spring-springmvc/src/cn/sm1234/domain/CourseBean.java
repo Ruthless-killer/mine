@@ -4,6 +4,15 @@ public class CourseBean {
 	private int id;
 	private String name;
 	private String des;
+	
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return "CourseBean [id=" + id + ", name=" + name + ", des=" + des + "]";
+	}
 	public int getId() {
 		return id;
 	}

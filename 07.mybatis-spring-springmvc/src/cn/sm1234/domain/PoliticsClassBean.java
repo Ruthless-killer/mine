@@ -12,6 +12,11 @@ public class PoliticsClassBean {
 	
 	
 	
+	@Override
+	public String toString() {
+		return "PoliticsClassBean [id=" + id + ", name=" + name + ", majorId=" + majorId + ", majorName=" + majorName
+				+ ", teacherId=" + teacherId + ", teacherName=" + teacherName + ", des=" + des + "]";
+	}
 	public String getMajorName() {
 		return majorName;
 	}
