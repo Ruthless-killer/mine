@@ -18,6 +18,19 @@ public class MajorBean {
 	
 	
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getDeptId() {
+		return deptId;
+	}
+	public void setDeptId(int deptId) {
+		this.deptId = deptId;
+	}
 	@Override
 	public String toString() {
 		return "MajorBean [id=" + id + ", name=" + name + ", setDate=" + setDate + ", deptId=" + deptId + ", deptName="
@@ -29,12 +42,7 @@ public class MajorBean {
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public String getName() {
 		return name;
 	}
@@ -47,12 +55,7 @@ public class MajorBean {
 	public void setSetDate(Date setDate) {
 		this.setDate = setDate;
 	}
-	public int getDeptId() {
-		return deptId;
-	}
-	public void setDeptId(int deptId) {
-		this.deptId = deptId;
-	}
+	
 	public String getDes() {
 		return des;
 	}
