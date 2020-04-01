@@ -43,13 +43,16 @@ public class studentServiceImpl implements studentService {
 
 	public int update(StudentBean s) {
 		// TODO Auto-generated method stub
+		s.setClassid(1);
+		s.setPowerid(1);
 		if(s.getClassname()!=null) {
 			String classname = s.getClassname();
 			int classid=politicsclassdao.selByName(classname).getId();
 			s.setClassid(classid);
-			return studentdao.update(s);
+			return studentdao.updateById(s);
 		}
-		return studentdao.update(s);
+		
+		return studentdao.updateById(s);
 	}
 
 	public int delete(StudentBean student) {

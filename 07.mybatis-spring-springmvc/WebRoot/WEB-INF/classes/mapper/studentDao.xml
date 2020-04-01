@@ -20,5 +20,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{password}, 
 			)
 	</insert>
+	
+	
+	<update id="updateById" parameterType="cn.sm1234.domain.StudentBean">
+		update student
+		<trim prefix="set" suffixOverrides=",">
+			<if test="student.sno!=null">sno=#{student.sno},</if>
+			<if test="student.name!=null">name=#{student.name},</if>
+			<if test="student.sex!=null">sex=#{student.sex},</if>
+			<if test="student.birthday!=null">birthday=#{student.birthday},</if>
+			<if test="student.nation!=null">nation=#{student.nation},</if>
+			<if test="student.tel!=null">tel=#{student.tel},</if>
+			<if test="student.email!=null">email=#{student.email},</if>
+			<if test="student.address!=null">address=#{student.address},</if>
+			<if test="student.password!=null">password=#{student.password},</if>
+			<if test="student.classid!=null">classid=#{student.classid},</if>
+			<if test="student.powerid!=null">powerid=#{student.powerid},</if>
+			<if test="student.des!=null">des=#{student.des},</if>
+		</trim>
+		where id=#{student.id}
+	</update>
 
 </mapper>

@@ -19,7 +19,7 @@ public interface studentDao {
 
 	int saveStudent(StudentBean s);
 
-	int update(StudentBean student);
+	int updateById(@Param("student") StudentBean student);
 	
 	
 	@Select("select  * from student limit #{arg0},#{arg1}")
