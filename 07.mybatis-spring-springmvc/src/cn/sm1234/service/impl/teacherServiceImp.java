@@ -49,6 +49,10 @@ public class teacherServiceImp implements teacherService {
 
 	public int update(TeacherBean teacher) {
 		// TODO Auto-generated method stub
+		teacher.setPowerid(2);
+		System.out.println("teacherservice");
+		System.out.println(teacher);
+		System.out.println("teacherserviceend");
 		if(teacher!=null&&teacher.getPosition()!=null) {
 			if(teacher.getPosition().equals("管理员")) {
 				teacher.setPowerid(3);
@@ -64,6 +68,7 @@ public class teacherServiceImp implements teacherService {
 
 	public int saveOne(TeacherBean teacher) {
 		// TODO Auto-generated method stub
+		teacher.setPowerid(2);
 		if(teacher!=null&&teacher.getPosition()!=null) {
 			if(teacher.getPosition().equals("管理员")) {
 				teacher.setPowerid(3);

@@ -1,5 +1,7 @@
 package cn.sm1234.service;
 
+import java.util.ArrayList;
+
 import cn.sm1234.domain.DeptBean;
 import cn.sm1234.domain.EasyUIDatagrid;
 import cn.sm1234.domain.StudentBean;
@@ -13,7 +15,7 @@ public interface studentService  {
 	
 	int update(StudentBean student);
 
-	int delete(StudentBean student);
+	int delete(ArrayList<Integer> del);
 
 	EasyUIDatagrid showAll(int pageSize,int pageNumber);
 

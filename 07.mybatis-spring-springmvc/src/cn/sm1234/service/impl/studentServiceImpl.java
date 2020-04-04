@@ -1,5 +1,6 @@
 package cn.sm1234.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,13 +33,15 @@ public class studentServiceImpl implements studentService {
 
 	public int saveStudent(StudentBean s) {
 		// TODO Auto-generated method stub
+		s.setClassid(1);
+		s.setPowerid(1);
 		if(s.getClassname()!=null) {
 			String classname = s.getClassname();
 			int classid=politicsclassdao.selByName(classname).getId();
 			s.setClassid(classid);
-			return studentdao.saveStudent(s);
+			return studentdao.saveOne(s);
 		}
-		return studentdao.saveStudent(s);
+		return 0;
 	}
 
 	public int update(StudentBean s) {
@@ -55,10 +58,7 @@ public class studentServiceImpl implements studentService {
 		return studentdao.updateById(s);
 	}
 
-	public int delete(StudentBean student) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	public EasyUIDatagrid showAll(int pageSize, int pageNumber) {
 		// TODO Auto-generated method stub
@@ -80,6 +80,11 @@ public class studentServiceImpl implements studentService {
 		datagrid.setRows(stulist);
 		datagrid.setTotal(studentdao.selCount());
 		return datagrid;
+	}
+
+	public int delete(ArrayList<Integer> del) {
+		// TODO Auto-generated method stub
+		return studentdao.deleteById(del);
 	}
 
 

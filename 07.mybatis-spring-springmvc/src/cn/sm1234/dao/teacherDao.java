@@ -29,8 +29,8 @@ public interface teacherDao {
 	@Select("select count(*) from teacher")
 	int selCount();
 
-	int update(TeacherBean teacher);
+	int update(@Param("teacher") TeacherBean teacher);
 
-	int saveOne(TeacherBean teacher);
+	int saveOne(@Param("teacher") TeacherBean teacher);
 
 }
