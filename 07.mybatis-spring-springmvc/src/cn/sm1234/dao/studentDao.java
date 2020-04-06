@@ -33,4 +33,7 @@ public interface studentDao {
 
 	int deleteById(@Param("array") ArrayList<Integer> array);
 
+	@Select("select id from student where classid = #{cid}")
+	ArrayList<Integer> selByCid(@Param("cid") int cid);
+
 }

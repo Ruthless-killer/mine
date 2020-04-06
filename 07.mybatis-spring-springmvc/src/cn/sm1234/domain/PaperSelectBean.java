@@ -11,6 +11,8 @@ public class PaperSelectBean {
 	private int studentanswer;
 	private int score;
 	private int getscore;
+	
+	
 	public int getId() {
 		return id;
 	}
