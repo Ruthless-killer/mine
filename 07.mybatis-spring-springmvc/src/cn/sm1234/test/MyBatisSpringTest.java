@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import cn.sm1234.controller.dtContrller;
 import cn.sm1234.dao.deptDao;
 import cn.sm1234.domain.Customer;
 import cn.sm1234.domain.DeptBean;
@@ -16,6 +17,7 @@ import cn.sm1234.domain.MajorBean;
 import cn.sm1234.domain.StudentBean;
 import cn.sm1234.service.CustomerService;
 import cn.sm1234.service.deptService;
+import cn.sm1234.service.dtService;
 import cn.sm1234.service.majorService;
 import cn.sm1234.service.studentService;
 import cn.sm1234.utils.DateUtils;
@@ -72,13 +74,10 @@ public class MyBatisSpringTest {
 	public void test() {
 		// 1.加载spring配置
 		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
-		majorService d = (majorService) ac.getBean("majorService");
+		dtService d = (dtService) ac.getBean("dtService");
 
-		MajorBean m= new MajorBean();
-		m.setDeptId(1);
-		m.setName("电子工程学院1");
-		int i=d.saveOne(m);
-		System.out.println(i);
+		d.selBySid(1);
+		//System.out.println(i);
 	}
 
 }
