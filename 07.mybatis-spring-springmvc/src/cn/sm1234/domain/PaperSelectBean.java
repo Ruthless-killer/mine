@@ -13,6 +13,12 @@ public class PaperSelectBean {
 	private int getscore;
 	
 	
+	@Override
+	public String toString() {
+		return "PaperSelectBean [id=" + id + ", papername=" + papername + ", question=" + question + ", modelanswer="
+				+ modelanswer + ", teachername=" + teachername + ", studentid=" + studentid + ", courseid=" + courseid
+				+ ", studentanswer=" + studentanswer + ", score=" + score + ", getscore=" + getscore + "]";
+	}
 	public int getId() {
 		return id;
 	}

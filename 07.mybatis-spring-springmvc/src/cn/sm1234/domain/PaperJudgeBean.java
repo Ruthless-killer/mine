@@ -11,6 +11,15 @@ public class PaperJudgeBean {
 	private int studentanswer;
 	private int score;
 	private int getscore;
+	
+	
+	
+	@Override
+	public String toString() {
+		return "PaperJudgeBean [id=" + id + ", papername=" + papername + ", question=" + question + ", modelanswer="
+				+ modelanswer + ", teachername=" + teachername + ", studentid=" + studentid + ", courseid=" + courseid
+				+ ", studentanswer=" + studentanswer + ", score=" + score + ", getscore=" + getscore + "]";
+	}
 	public int getId() {
 		return id;
 	}

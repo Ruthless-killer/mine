@@ -10,6 +10,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.sm1234.controller.dtContrller;
 import cn.sm1234.dao.deptDao;
+import cn.sm1234.dao.paperjudgeDao;
+import cn.sm1234.dao.paperselectDao;
 import cn.sm1234.domain.Customer;
 import cn.sm1234.domain.DeptBean;
 import cn.sm1234.domain.EasyUIDatagrid;
@@ -74,10 +76,10 @@ public class MyBatisSpringTest {
 	public void test() {
 		// 1.加载spring配置
 		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
-		dtService d = (dtService) ac.getBean("dtService");
-
-		d.selBySid(1);
-		//System.out.println(i);
+		paperjudgeDao d = (paperjudgeDao) ac.getBean("paperjudgeDao");
+		String question = " 在线性链表中删除结点时，只需要将被删结点释放，不需要修改任何指针。";
+		//d.selByq(question);
+		System.out.println(d.selByq(question));
 	}
 
 }
