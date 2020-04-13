@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 -->
+<mapper namespace="cn.sm1234.dao.paperselectDao">
+
+	<insert id="saveSelq"
+		parameterType="cn.sm1234.domain.PaperSelectBean">
+		insert into paper_select
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<!-- <if test="dept.id != null">
+				id,
+			</if> -->
+			
+			<if test="ps.papername != null">
+				papername,
+			</if>
+			<if test="ps.question != null">
+				question,
+			</if>
+			<if test="ps.modelanswer != null">
+				modelanswer,
+			</if>
+			<if test="ps.studentid != null">
+				studentid,
+			</if>
+			<if test="ps.courseid != null">
+				courseid,
+			</if>
+			<if test="ps.score != null">
+				score,
+			</if>
+			
+			
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<!-- <if test="dept.id != null">
+				#{dept.id},
+			</if> -->
+			
+			<if test="ps.papername != null">
+				#{ps.papername},
+			</if>
+			<if test="ps.question != null">
+				#{ps.question},
+			</if>
+			<if test="ps.modelanswer != null">
+				#{ps.modelanswer},
+			</if>
+			<if test="ps.studentid != null">
+				#{ps.studentid},
+			</if>
+			<if test="ps.courseid != null">
+				#{ps.courseid},
+			</if>
+			<if test="ps.score != null">
+				#{ps.score},
+			</if>
+		</trim>
+	</insert>
+
+
+
+	<!-- <update id="updateById" parameterType="cn.sm1234.domain.DeptBean">
+		update dept 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="dept.name!=null">name=#{dept.name},</if>
+			<if test="dept.setdate!=null">setdate=#{dept.setdate},</if>
+			<if test="dept.des!=null">des=#{dept.des},</if>
+		</trim>
+		where id=#{dept.id}
+	</update>
+
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		
+		DELETE FROM dept WHERE id in
+		<foreach collection="array" item="arr" index="no" open="("
+			separator="," close=")">
+			#{arr}
+		</foreach>
+
+	</delete> -->
+
+</mapper>

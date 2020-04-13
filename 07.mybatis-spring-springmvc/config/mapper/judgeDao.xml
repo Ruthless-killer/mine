@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 -->
+<mapper namespace="cn.sm1234.dao.judgeDao">
+	
+	
+	<update id="update" parameterType="cn.sm1234.domain.QuestionBankJudgeBean">
+		update question_bank_judge 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="questionjudge.question!=null">question=#{questionjudge.question},</if>
+			<if test="questionjudge.answer!=null">answer=#{questionjudge.answer},</if>
+			<if test="questionjudge.teachername!=null">teachername=#{questionjudge.teachername},</if>
+			<if test="questionjudge.courseid!=null">courseid=#{questionjudge.courseid},</if>
+		</trim>
+		where id=#{questionjudge.id}
+	</update>
+	
+	<insert id="saveOne" parameterType="cn.sm1234.domain.QuestionBankJudgeBean">
+		insert into question_bank_judge
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="questionjudge.question != null">
+				question,
+			</if>
+			<if test="questionjudge.answer != null">
+				answer,
+			</if>
+			<if test="questionjudge.teachername != null">
+				teachername,
+			</if>
+			<if test="questionjudge.courseid != null">
+				courseid,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			
+			<if test="questionjudge.question != null">
+				#{questionjudge.question},
+			</if>
+			<if test="questionjudge.answer != null">
+				#{questionjudge.answer},
+			</if>
+			<if test="questionjudge.teachername != null">
+				#{questionjudge.teachername},
+			</if>
+			<if test="questionjudge.courseid != null">
+				#{questionjudge.courseid}
+			</if>
+		</trim>
+	</insert>
+	
+	
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		
+		DELETE FROM question_bank_judge WHERE id in
+		<foreach collection="array" item="arr" index="no" open="("
+			separator="," close=")">
+			#{arr}
+		</foreach>
+
+	</delete>
+
+
+	
+	
+
+</mapper>

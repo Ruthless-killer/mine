@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 -->
+<mapper namespace="cn.sm1234.dao.majorDao">
+	<update id="updateById" parameterType="cn.sm1234.domain.MajorBean">
+		update major
+		<trim prefix="set" suffixOverrides=",">
+			<if test="major.name!=null">name=#{major.name},</if>
+			<if test="major.setdate!=null">setdate=#{major.setDate},</if>
+			<if test="major.deptId!=null">deptid=#{major.deptId},</if>
+			<if test="major.des!=null">des=#{major.des},</if>
+		</trim>
+		where id=#{major.id}
+	</update>
+	
+	<insert id="saveOne"  parameterType="cn.sm1234.domain.MajorBean">
+		insert into major
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="major.name != null">
+				name,
+			</if>
+			<if test="major.setDate != null">
+				setdate,
+			</if>
+			<if test="major.deptId != null">
+				deptid,
+			</if>
+			<if test="major.des != null">
+				des
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			
+			
+			<if test="major.name != null">
+				#{major.name},
+			</if>
+			<if test="major.setDate != null">
+				#{major.setDate},
+			</if>
+			<if test="major.deptId != null">
+				#{major.deptId},
+			</if>
+			<if test="major.des != null">
+				#{major.des}
+			</if>
+		</trim>
+	</insert>
+	
+	
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		
+		DELETE FROM major WHERE id in
+		<foreach collection="array" item="arr" index="no" open="("
+			separator="," close=")">
+			#{arr}
+		</foreach>
+
+	</delete>
+	
+
+</mapper>

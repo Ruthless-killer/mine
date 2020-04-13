@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 -->
+<mapper namespace="cn.sm1234.dao.selectDao">
+	
+	
+	<update id="update" parameterType="cn.sm1234.domain.QuestionBankSelectBean">
+		update question_bank_select 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="questionselect.question!=null">question=#{questionselect.question},</if>
+			<if test="questionselect.answer!=null">answer=#{questionselect.answer},</if>
+			<if test="questionselect.teachername!=null">teachername=#{questionselect.teachername},</if>
+			<if test="questionselect.courseid!=null">courseid=#{questionselect.courseid},</if>
+		</trim>
+		where id=#{questionselect.id}
+	</update>
+	
+	<insert id="saveOne" parameterType="cn.sm1234.domain.QuestionBankSelectBean">
+		insert into question_bank_select
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="questionselect.question != null">
+				question,
+			</if>
+			<if test="questionselect.answer != null">
+				answer,
+			</if>
+			<if test="questionselect.teachername != null">
+				teachername,
+			</if>
+			<if test="questionselect.courseid != null">
+				courseid,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			
+			<if test="questionselect.question != null">
+				#{questionselect.question},
+			</if>
+			<if test="questionselect.answer != null">
+				#{questionselect.answer},
+			</if>
+			<if test="questionselect.teachername != null">
+				#{questionselect.teachername},
+			</if>
+			<if test="questionselect.courseid != null">
+				#{questionselect.courseid}
+			</if>
+		</trim>
+	</insert>
+	
+	
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		
+		DELETE FROM question_bank_select WHERE id in
+		<foreach collection="array" item="arr" index="no" open="("
+			separator="," close=")">
+			#{arr}
+		</foreach>
+
+	</delete>
+
+
+	
+	
+
+</mapper>

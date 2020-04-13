@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 -->
+<mapper namespace="cn.sm1234.dao.PoliticsClassDao">
+
+	<insert id="saveOne" parameterType="cn.sm1234.domain.PoliticsClassBean">
+		INSERT INTO politicsclass 
+			<trim prefix="(" suffix=")" suffixOverrides=",">
+			<!-- <if test="politicsClass.id != null">
+				id,
+			</if> -->
+			
+			<if test="politicsClass.name != null">
+				name,
+			</if>
+			<if test="politicsClass.majorId != null">
+				majorid,
+			</if>
+			<if test="politicsClass.teacherId != null">
+				teacherid,
+			</if>
+			<if test="politicsClass.des != null">
+				des,
+			</if>
+			
+			
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<!-- <if test="dept.id != null">
+				#{dept.id},
+			</if> -->
+			
+			<if test="politicsClass.name != null">
+				#{politicsClass.name},
+			</if>
+			<if test="politicsClass.majorId != null">
+				#{politicsClass.majorId},
+			</if>
+			<if test="politicsClass.teacherId != null">
+				#{politicsClass.teacherId},
+			</if>
+			<if test="politicsClass.des != null">
+				#{politicsClass.des},
+			</if>
+		</trim>
+	</insert>
+	
+	
+	<update id="updateById" parameterType="cn.sm1234.domain.PoliticsClassBean">
+		update politicsclass
+		<trim prefix="set" suffixOverrides=",">
+			<if test="politicsClassBean.name!=null">name=#{politicsClassBean.name},</if>
+			<if test="politicsClassBean.majorId!=null">majorid=#{politicsClassBean.majorId},</if>
+			<if test="politicsClassBean.teacherId!=null">teacherid=#{politicsClassBean.teacherId},</if>
+			<if test="politicsClassBean.des!=null">des=#{politicsClassBean.des},</if>
+		</trim>
+		where id=#{politicsClassBean.id}
+	</update>
+
+
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		
+		DELETE FROM politicsclass WHERE id in
+		<foreach collection="array" item="arr" index="no" open="("
+			separator="," close=")">
+			#{arr}
+		</foreach>
+
+	</delete>
+</mapper>

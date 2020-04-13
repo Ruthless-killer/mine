@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 -->
+<mapper namespace="cn.sm1234.dao.chengjiDao">
+	
+	
+	
+	
+	<insert id="savescore" parameterType="cn.sm1234.domain.chengji">
+		insert into grade
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="chengji.studentid != null">
+				studentid,
+			</if>
+			<if test="chengji.teacherid != null">
+				teacherid,
+			</if>
+			<if test="chengji.courseid != null">
+				courseid,
+			</if>
+			<if test="chengji.grade != null">
+				grade,
+			</if>
+			<if test="chengji.papername != null">
+				papername,
+			</if>
+			
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			
+			<if test="chengji.studentid != null">
+				#{chengji.studentid},
+			</if>
+			<if test="chengji.teacherid != null">
+				#{chengji.teacherid},
+			</if>
+			<if test="chengji.courseid != null">
+				#{chengji.courseid},
+			</if>
+			<if test="chengji.grade != null">
+				#{chengji.grade},
+			</if>
+			<if test="chengji.papername != null">
+				#{chengji.papername},
+			</if>
+			
+		</trim>
+	</insert>
+	
+	
+	<!-- <delete id="deleteById" parameterType="java.lang.Integer">
+		
+		DELETE FROM question_bank_judge WHERE id in
+		<foreach collection="array" item="arr" index="no" open="("
+			separator="," close=")">
+			#{arr}
+		</foreach>
+
+	</delete> -->
+
+
+	
+	
+
+</mapper>
