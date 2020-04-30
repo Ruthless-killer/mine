@@ -24,7 +24,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="teacher.email!=null">email=#{teacher.email},</if>
 			<if test="teacher.address!=null">address=#{teacher.address},</if>
 			<if test="teacher.position!=null">position=#{teacher.position},</if>
-			<if test="teacher.password!=null">name=#{teacher.password},</if>
+			<if test="teacher.password!=null">password=#{teacher.password},</if>
 			<if test="teacher.powerid!=null">powerid=#{teacher.powerid},</if>
 			<if test="teacher.des!=null">des=#{teacher.des},</if>
 		</trim>
@@ -116,6 +116,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</trim>
 	</insert>
 
-	
+	<delete id="delete" parameterType="java.lang.Integer">
+		
+		DELETE FROM teacher WHERE id in
+		<foreach collection="array" item="arr" index="no" open="("
+			separator="," close=")">
+			#{arr}
+		</foreach>
+
+	</delete>
 
 </mapper>

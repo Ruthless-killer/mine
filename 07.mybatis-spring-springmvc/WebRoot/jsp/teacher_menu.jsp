@@ -227,7 +227,7 @@
 </head>
 <body>
 <body class="easyui-layout">
-	<div data-options="region:'north',title:'至尊管理系统'"
+	<div data-options="region:'north',title:'高校题库管理系统'"
 		style="height: 100px;">
 		<div
 			style="width: 400px; height: 70px; float: left; font-size: 20px; font-weight: bold; line-height: 70px; padding-left: 20px;">

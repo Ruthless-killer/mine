@@ -2,6 +2,7 @@ package cn.sm1234.controller;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +65,22 @@ public class teacherController {
 
 		return teacherservice.saveOne(teacher);
 
+	}
+	
+	@RequestMapping("delet")
+	@ResponseBody
+	public int delete(@RequestParam(value="del[]") ArrayList<Integer> del) {
+		//ArrayList<Integer> al  = new ArrayList<Integer>();
+		if(del!=null) {
+			//System.out.println("del!=null");
+			System.out.println(del.size());
+			return teacherservice.delete(del);
+			
+			
+		}
+		
+		//return deptservice.delete(al);
+		return 0;
 	}
 
 }

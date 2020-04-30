@@ -1,5 +1,6 @@
 package cn.sm1234.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +80,12 @@ public class teacherServiceImp implements teacherService {
 			}
 		}
 		return teacherdao.saveOne(teacher);
+	}
+
+
+	public int delete(ArrayList<Integer> del) {
+		// TODO Auto-generated method stub
+		return teacherdao.delete(del);
 	}
 	
 

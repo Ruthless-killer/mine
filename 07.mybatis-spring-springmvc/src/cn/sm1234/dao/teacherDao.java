@@ -1,5 +1,6 @@
 package cn.sm1234.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -32,5 +33,8 @@ public interface teacherDao {
 	int update(@Param("teacher") TeacherBean teacher);
 
 	int saveOne(@Param("teacher") TeacherBean teacher);
+
+	
+	int delete(@Param("array")ArrayList<Integer> del);
 
 }

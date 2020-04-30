@@ -22,7 +22,7 @@ $(function(){
 		       	if(data==1){
 		       		$.messager.show({
 		       			title:'系统消息',
-		       			msg:'修改成功',
+		       			msg:'保存成功',
 		       			timeout:3000,
 		       			showType:'slide'
 		       		});
@@ -58,7 +58,7 @@ $(function(){
 				</tr>
 				<tr>
 					<td colspan="2"><a id="yxxg_edit_submit" href="#"
-						class="easyui-linkbutton" data-options="iconCls:'icon-search'">修改</a>
+						class="easyui-linkbutton" data-options="iconCls:'icon-search'">保存</a>
 					</td>
 				</tr>
 			</table>
