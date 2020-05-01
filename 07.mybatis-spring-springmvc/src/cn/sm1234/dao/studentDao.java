@@ -14,6 +14,7 @@ import cn.sm1234.domain.User;
 
 
 
+
 public interface studentDao {
 	
 	
@@ -35,5 +36,8 @@ public interface studentDao {
 
 	@Select("select id from student where classid = #{cid}")
 	ArrayList<Integer> selByCid(@Param("cid") int cid);
+
+	@Select("select * from student where sno = #{studentid}")
+	StudentBean selBySid(@Param("studentid")int studentid);
 
 }

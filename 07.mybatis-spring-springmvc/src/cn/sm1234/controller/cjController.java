@@ -29,8 +29,9 @@ import cn.sm1234.utils.DateUtils;
 
 
 @Controller
-@RequestMapping("/cj")
+@RequestMapping("cj")
 public class cjController {
+	@Autowired
 	private cjService cjservice;
 	
 	@InitBinder

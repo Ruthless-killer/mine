@@ -37,4 +37,7 @@ public interface teacherDao {
 	
 	int delete(@Param("array")ArrayList<Integer> del);
 
+	@Select("select * from teacher where tno = #{teacherid}")
+	TeacherBean selByTid(@Param("teacherid") int teacherid);
+
 }

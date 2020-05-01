@@ -27,6 +27,9 @@ public interface courseDao {
 
 	@Select("select * from course where name = #{coursename}")
 	CourseBean selByName(@Param("coursename")String coursename);
+
+
+	
 	
 	
 

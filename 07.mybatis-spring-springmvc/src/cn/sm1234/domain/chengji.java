@@ -3,17 +3,47 @@ package cn.sm1234.domain;
 public class chengji {
 	private int id;
 	private  int studentid;
+	private String studentname;
 	private int teacherid;
+	private String teachername;
 	private int courseid;
+	private String coursename;
 	private int grade;
 	private String papername;
 	
 	
 	
+	
+
 	@Override
 	public String toString() {
-		return "chengji [id=" + id + ", studentid=" + studentid + ", teacherid=" + teacherid + ", courseid=" + courseid
+		return "chengji [id=" + id + ", studentid=" + studentid + ", studentname=" + studentname + ", teacherid="
+				+ teacherid + ", teachername=" + teachername + ", courseid=" + courseid + ", coursename=" + coursename
 				+ ", grade=" + grade + ", papername=" + papername + "]";
+	}
+
+	public String getStudentname() {
+		return studentname;
+	}
+
+	public void setStudentname(String studentname) {
+		this.studentname = studentname;
+	}
+
+	public String getTeachername() {
+		return teachername;
+	}
+
+	public void setTeachername(String teachername) {
+		this.teachername = teachername;
+	}
+
+	public String getCoursename() {
+		return coursename;
+	}
+
+	public void setCoursename(String coursename) {
+		this.coursename = coursename;
 	}
 
 	public String getPapername() {
