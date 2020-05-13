@@ -90,7 +90,7 @@ public class dtServiceImp implements dtService {
 		// TODO Auto-generated method stub
 		int chengji = 0;
 		for (int i=0;i<question.length;i++) {
-			PaperSelectBean  ps=paperselectdao.selByq(question[i]+"%");
+			PaperSelectBean  ps=paperselectdao.selByq(question[i]+"%",papername);
 			String q = ps.getQuestion();
 			System.out.println("answer[i]"+answer[i]);
 			System.out.println("ps.getModelanswer()"+ps.getModelanswer());
@@ -105,7 +105,8 @@ public class dtServiceImp implements dtService {
 			}
 		}
 		for (int i=0;i<judquestion.length;i++) {
-			PaperJudgeBean  pd=paperjudgedao.selByq(judquestion[i]+"%");
+			PaperJudgeBean  pd=paperjudgedao.selByq(judquestion[i]+"%",papername);
+			System.out.println(pd.getQuestion());
 			String q = pd.getQuestion()+"%";
 			if(judanswer[i].equals(pd.getModelanswer()+"")) {
 				paperjudgedao.updateAS(judanswer[i],papername,studentid,q);

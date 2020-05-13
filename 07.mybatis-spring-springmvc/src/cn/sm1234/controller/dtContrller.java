@@ -20,6 +20,7 @@ import cn.sm1234.domain.PaperBean;
 import cn.sm1234.domain.PaperSelectBean;
 import cn.sm1234.domain.User;
 import cn.sm1234.domain.chengji;
+import cn.sm1234.service.cjService;
 import cn.sm1234.service.dtService;
 
 @Controller
@@ -27,6 +28,8 @@ import cn.sm1234.service.dtService;
 public class dtContrller {
 	@Autowired
 	private dtService dtservice;
+	@Autowired
+	private cjService cjservice;
 
 	/*
 	 * 查询相关试卷
@@ -92,4 +95,17 @@ public class dtContrller {
 		return 1;
 		
 	}
+	
+	
+//	@RequestMapping("showStu")
+//	@ResponseBody
+//	public int showStu(String papername,int courseid,HttpServletRequest request,HttpSession session) {
+//		
+//		User u = (User) session.getAttribute("user");
+//		String sno  = u.getUserName();
+//	
+//		cjservice.showStu(sno);
+//		return 1;
+//		
+//	}
 }

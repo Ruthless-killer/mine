@@ -62,6 +62,15 @@ public class cjController {
 		String sid  = u.getUserName();
 		int s = Integer.parseInt(sid);
 		ArrayList<chengji> c= cjservice.showOne(s);
+		for (chengji chengji : c) {
+			System.out.println(chengji);
+		}
+//		if(u.getUserType().equals("student")) {
+//			System.out.println("student");
+//			session.setAttribute("cj1", c);
+//		}else {
+//			session.setAttribute("cj", c);
+//		}
 		session.setAttribute("cj", c);
 		return c;
 		
@@ -72,26 +81,26 @@ public class cjController {
 	
 	
 	
-	/*
-	 * 删除
-	 * 
-	 */
-	@RequestMapping("deletMajor")
-	@ResponseBody
-	public int deleteMajor(@RequestParam(value="del[]")ArrayList<Integer> del) {
-		if(del.size()!=0) {
-			System.out.println("delete1");
-			for (Integer integer : del) {
-				System.out.println(integer);
-			}
-			//System.out.println(major);
-			
-		}
-		System.out.println("aaaaaa");
-		return 0;
-		//return 0;
-		
-	}
+//	/*
+//	 * 删除
+//	 * 
+//	 */
+//	@RequestMapping("deletMajor")
+//	@ResponseBody
+//	public int deleteMajor(@RequestParam(value="del[]")ArrayList<Integer> del) {
+//		if(del.size()!=0) {
+//			System.out.println("delete1");
+//			for (Integer integer : del) {
+//				System.out.println(integer);
+//			}
+//			//System.out.println(major);
+//			
+//		}
+//		System.out.println("aaaaaa");
+//		return 0;
+//		//return 0;
+//		
+//	}
 	
 	
 }

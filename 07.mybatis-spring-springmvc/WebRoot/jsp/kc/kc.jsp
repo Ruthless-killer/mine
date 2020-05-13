@@ -32,7 +32,12 @@ $(function(){
 	    url:'${pageContext.request.contextPath}/kc/showAll.action',    
 	    columns:[[        
 	        {field:'name',title:'课程名称',width:100},    
-	        {field:'des',title:'备注',width:100,align:'right'}
+	        {field:'des',title:'备注',width:100,align:'right'},
+	        {field:'qwe',title:'操作',width:100,align:'right',
+	        	formatter: function(value,row,index){
+					return "<a href='javascript:void(0)' onclick='javascript:abc(this);return false;'>选课</a>";
+				}
+	        }
 	    ]],
 	    pagination:true,
 	    pageList:[2,4,6],

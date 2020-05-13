@@ -47,7 +47,17 @@ public class cjServiceImp implements cjService {
 	}
 	public ArrayList<chengji> showOne(int s) {
 		// TODO Auto-generated method stub
-		return cjdao.selBySid(s);
+		
+		ArrayList<chengji> c = cjdao.selBySid(s);
+		for (chengji chengji : c) {
+			StudentBean stu=studentdao.selBySid(chengji.getStudentid());
+			chengji.setStudentname(stu.getName());
+			//TeacherBean t = teacherdao.selByTid(chengji.getTeacherid());
+			CourseBean cou = coursedao.selById(chengji.getCourseid());
+			chengji.setCoursename(cou.getName());
+			
+		}
+		return c;
 	}
 
 }

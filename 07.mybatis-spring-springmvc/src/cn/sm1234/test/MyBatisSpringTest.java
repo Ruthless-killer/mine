@@ -79,7 +79,7 @@ public class MyBatisSpringTest {
 		paperjudgeDao d = (paperjudgeDao) ac.getBean("paperjudgeDao");
 		String question = " 在线性链表中删除结点时，只需要将被删结点释放，不需要修改任何指针。";
 		//d.selByq(question);
-		System.out.println(d.selByq(question));
+		//System.out.println(d.selByq(question));
 	}
 
 }

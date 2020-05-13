@@ -62,7 +62,8 @@ $(function(){
 		       			showType:'../succ.jsp'
 		       			
 		       		});
-		       		location.href="sdt.jsp";
+		       		location.href="../student_menu.jsp";
+		       		alert("提交成功");
 		       		//弹出框关闭
 		       	}else{
 		       		$.messager.alert("系统信息","修改失败,请重新修改");
@@ -87,7 +88,7 @@ $(function(){
 	</c:if>
  	<c:if test="${per1.type == 2}">
 	   ${per1.question }<br><br>
-	   <input type="radio" checked="checked" name=${per1.question } value="5" />TRUE
+	   <input type="radio"  name=${per1.question } value="5" />TRUE
 	   <input type="radio"  name=${per1.question } value="6" />FALSE
 	</c:if>
 

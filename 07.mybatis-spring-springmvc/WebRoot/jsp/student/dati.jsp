@@ -43,14 +43,14 @@
 			}
 		});
 	})
-	 function myClick() {
+	 function myClick(papername) {
 		// alert("aaaaas");
 		 //window.location = "http://www.baidu.com";
 		 //var= this.name;
-		 var papername= document.getElementById("bt").value;
-		 debugger;
-		 var courseid= document.getElementById("bt").name;
+		 var papername= papername;
 		 
+		 var courseid= document.getElementById(papername).name;
+		 debugger;
 		 $.ajax({
 				cache : true,//保留缓存数据
 				type : "POST",//为post请求
@@ -75,11 +75,11 @@
 <body>
 	<!--  <input id="getUserid" style="line-height: 20px; border: 1px solid #ccc"> -->
 
-<br>
+
  <c:forEach items="${list }" var="per1">
  	
  
- 	<input type="submit" id = "bt" name=${per1.value } value=${per1.key } onclick="myClick()">
+ 	<input type="submit" id = ${per1.key } name=${per1.value } value=${per1.key } onclick="myClick(value)">
      <br>
 </c:forEach>
 <br>

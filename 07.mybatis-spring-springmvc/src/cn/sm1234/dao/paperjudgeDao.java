@@ -18,8 +18,8 @@ public interface paperjudgeDao {
 	@Select("SELECT * from paper_judge where  papername=#{papername} and courseid = #{courseid}")
 	ArrayList<PaperJudgeBean>  selByNAC(@Param("papername")String papername,@Param("courseid") int courseid);
 
-	@Select("select * from paper_judge where question like #{question}")
-	PaperJudgeBean selByq(@Param("question") String question);
+	@Select("select * from paper_judge where question like #{question} and papername =#{papername}")
+	PaperJudgeBean selByq(@Param("question") String question,@Param("papername") String papername);
 
 	@Update("update paper_judge set studentanswer = #{string} where papername =#{papername} and studentid = #{studentid} and question like #{question}")
 	int updateAS(@Param("string")String string,@Param("papername") String papername,@Param("studentid")int studentid,@Param("question") String question);

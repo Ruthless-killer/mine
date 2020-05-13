@@ -18,10 +18,10 @@ public interface paperselectDao {
 	@Select("SELECT * from paper_select where papername=#{papername} and courseid = #{courseid}")
 	ArrayList<PaperSelectBean> selByNAC(@Param("papername")String papername,@Param("courseid") int courseid);
 
-	@Select("select * from paper_select where question like #{question}")
-	PaperSelectBean selByq(@Param("question")String question);
+	@Select("select * from paper_select where question like #{question} and papername =#{papername}")
+	PaperSelectBean selByq(@Param("question")String question,@Param("papername") String papername);
 
-	@Update("update paper_select set studentanswer = #{string} where papername=#{papername} and studentid = #{studentid} and question like #{question}")
+	@Update("update paper_select set studentanswer = #{string} where papername=#{papername} and studentid = #{studentid} and question like #{question} ")
 	int updateAS(@Param("string")String string,@Param("papername") String papername,@Param("studentid") int studentid, @Param("question")String question);
 
 }
